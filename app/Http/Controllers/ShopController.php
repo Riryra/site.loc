@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-Class ShopController extends Controller 
+class ShopController extends Controller 
 {
 	public function index() {
 
-		$products= Session::get('products');
+		$products = Session::get('products');
 
 		if ($products === null) {
 			Session::put('products', []);
@@ -20,7 +20,7 @@ Class ShopController extends Controller
 		
 		$products = Products::all();
 
-		return view('shop.index', ['all' => $products, 'title' => 'shop' ]);
+		return view('shop.index', ['all' => $products, 'title' => 'Shop']);
 	}
 
 	public function showProduct($id) {

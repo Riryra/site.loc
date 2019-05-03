@@ -15,7 +15,7 @@ class ProductController extends Controller
 
 		$image = '';
 
-		if ($request->hasfile('product-image') === true) {
+		if ($request->hasFile('product-image') === true) {
 			$image = $request->file('product-image')->store('products', 'images');
 		}
 
